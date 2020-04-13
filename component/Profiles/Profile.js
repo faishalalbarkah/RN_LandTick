@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {Image, View, Text} from 'react-native';
 import {Icon} from 'native-base';
 import Footers from '../Footers';
-import {ScrollView} from 'react-native-gesture-handler';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 class Profile extends Component {
   static navigationOptions = {header: null};
@@ -84,53 +84,59 @@ class Profile extends Component {
             <Text style={{fontSize: 18, fontWeight: 'bold', color: '#6A6463'}}>
               Cek Tiket Saya
             </Text>
-            <View
-              style={{
-                marginTop: 5,
-                height: 80,
-                borderWidth: 1,
-                borderColor: '#EFEFEF',
-                backgroundColor: 'white',
-                borderRadius: 10,
-                shadowColor: '#000',
-                shadowOffset: {width: 0, height: 1},
-                shadowOpacity: 0.8,
-                shadowRadius: 2,
-                elevation: 5,
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigation.navigate('TiketSaya');
               }}>
-              <View>
-                <Image
-                  style={{
-                    height: 45,
-                    width: 45,
-                    marginVertical: 15,
-                    marginLeft: 15,
-                  }}
-                  source={{
-                    uri:
-                      'https://www.celladorales.com/wp-content/uploads/2017/07/ticket-clipart-purge-clipart-ticket-85041.jpg',
-                  }}
-                />
-                <Text
-                  style={{
-                    marginLeft: 80,
-                    fontSize: 18,
-                    fontWeight: 'bold',
-                    marginTop: -65,
-                  }}>
-                  Tiket Saya
-                </Text>
-                <Text
-                  style={{
-                    marginLeft: 80,
-                    marginTop: 5,
-                    color: 'blue',
-                  }}>
-                  Yuk!! Cek Tiket mu disini
-                </Text>
+              <View
+                style={{
+                  marginTop: 5,
+                  height: 80,
+                  borderWidth: 1,
+                  borderColor: '#EFEFEF',
+                  backgroundColor: 'white',
+                  borderRadius: 10,
+                  shadowColor: '#000',
+                  shadowOffset: {width: 0, height: 1},
+                  shadowOpacity: 0.8,
+                  shadowRadius: 2,
+                  elevation: 5,
+                }}>
+                <View>
+                  <Image
+                    style={{
+                      height: 45,
+                      width: 45,
+                      marginVertical: 15,
+                      marginLeft: 15,
+                    }}
+                    source={{
+                      uri:
+                        'https://www.celladorales.com/wp-content/uploads/2017/07/ticket-clipart-purge-clipart-ticket-85041.jpg',
+                    }}
+                  />
+                  <Text
+                    style={{
+                      marginLeft: 80,
+                      fontSize: 18,
+                      fontWeight: 'bold',
+                      marginTop: -65,
+                    }}>
+                    Tiket Saya
+                  </Text>
+                  <Text
+                    style={{
+                      marginLeft: 80,
+                      marginTop: 5,
+                      color: 'blue',
+                    }}>
+                    Yuk!! Cek Tiket mu disini
+                  </Text>
+                </View>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
+
           {/* Fitur Member */}
           <View style={{marginTop: 20, marginHorizontal: 20, marginTop: 15}}>
             <Text style={{fontSize: 18, fontWeight: 'bold', color: '#6A6463'}}>

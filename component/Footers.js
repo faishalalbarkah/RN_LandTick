@@ -15,9 +15,13 @@ class Footers extends Component {
             <Icon name="apps" />
             <Text>Home</Text>
           </Button>
-          <Button vertical>
-            <Icon name="payment" type="MaterialIcons" />
-            <Text>Payment</Text>
+          <Button
+            vertical
+            onPress={() => {
+              this.props.navigation.navigate('Tiket');
+            }}>
+            <Icon name="ticket-alt" type="FontAwesome5" />
+            <Text>Ticket</Text>
           </Button>
           <Button
             vertical
